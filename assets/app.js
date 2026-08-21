@@ -3,7 +3,7 @@ const articles = [
     date: "2026.08.12",
     source: "연합뉴스",
     category: "milestone",
-    title: "아시아나 주주총회, 대한항공과 합병안 가결",
+    title: "아시아나 주주총회 대한항공과 합병안 가결",
     summary:
       "5년 넘게 이어진 통합 작업이 마지막 주주 승인 관문을 통과했다. 12월 17일 출범을 향한 막바지 절차를 정리한다.",
     url: "https://www.yna.co.kr/amp/view/AKR20260812045751003",
@@ -12,7 +12,7 @@ const articles = [
     date: "2026.07.10",
     source: "매일경제",
     category: "crew",
-    title: "합병 앞두고 함께한 사회공헌, 팀워크를 만들다",
+    title: "합병 앞두고 함께한 사회공헌 팀워크를 만들다",
     summary:
       "대한항공 조종사와 아시아나 승무원이 함께 참여한 진로 교육 등 공동 조직문화 프로그램 사례를 다룬다.",
     url: "https://www.mk.co.kr/en/business/12095429",
@@ -30,7 +30,7 @@ const articles = [
     date: "2026.06.25",
     source: "연합뉴스",
     category: "milestone",
-    title: "국토부, 양사 통합 인가…12월 출범 길 열려",
+    title: "국토부 양사 통합 인가…12월 출범 길 열려",
     summary:
       "정부 인가의 의미와 운항증명 체계, 향후 감독 방향을 영어 기사로 정리했다.",
     url: "https://en.yna.co.kr/view/AEN20260625011200320",
@@ -48,7 +48,7 @@ const articles = [
     date: "2026.06.23",
     source: "Lufthansa Group",
     category: "customer",
-    title: "아시아나항공, 스타얼라이언스 탈퇴",
+    title: "아시아나항공 스타얼라이언스 탈퇴",
     summary:
       "동맹 탈퇴 일정과 인천을 계속 운항하는 회원사 네트워크를 알린 스타얼라이언스 발표 재게시본이다.",
     url: "https://newsroom.lufthansagroup.com/en/asiana-airlines-to-exit-star-alliance/",
@@ -66,7 +66,7 @@ const articles = [
     date: "2026.06.15",
     source: "뉴스토마토",
     category: "crew",
-    title: "아시아나 승무원, 대한항공편에서 서비스 체험",
+    title: "아시아나 승무원 대한항공편에서 서비스 체험",
     summary:
       "통합 출범을 앞두고 아시아나 객실승무원이 대한항공편에 탑승해 기내 서비스와 업무 체계를 직접 살펴본 표준화 프로그램을 취재했다.",
     url: "https://www.newstomato.com/ReadNews.aspx?no=1303979",
@@ -75,7 +75,7 @@ const articles = [
     date: "2026.05.29",
     source: "The Korea Times",
     category: "crew",
-    title: "양사 승무원, 첫 공동 비상탈출 훈련 완료",
+    title: "양사 승무원 첫 공동 비상탈출 훈련 완료",
     summary:
       "각 사 객실승무원 14명씩이 참여한 합동 훈련을 통해 안전 절차 통합의 실제 모습을 보여준다.",
     url: "https://www.koreatimes.co.kr/business/companies/20260529/korean-air-asiana-complete-joint-emergency-drill-ahead-of-merger",
@@ -84,7 +84,7 @@ const articles = [
     date: "2026.05.18",
     source: "EUR-Lex",
     category: "regulation",
-    title: "EU 집행위 결정 요약, 관보에 공개",
+    title: "EU 집행위 결정 요약 관보에 공개",
     summary:
       "여객·화물 시장 경쟁 우려와 시정 조치, 효율성 주장에 대한 EU의 공식 판단을 담은 결정 요약문이다.",
     url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52026M10149(02)",
@@ -129,7 +129,7 @@ const articles = [
     date: "2026.03.23",
     source: "연합뉴스",
     category: "customer",
-    title: "아시아나 좌석번호 체계, 대한항공과 연동",
+    title: "아시아나 좌석번호 체계 대한항공과 연동",
     summary:
       "통합 직전 운항편의 좌석 번호 체계를 맞추는 고객 접점의 구체적 변화를 전한다.",
     url: "https://www.yna.co.kr/amp/view/AKR20260323116900003",
@@ -147,7 +147,7 @@ const articles = [
     date: "2026.02.27",
     source: "아시아경제",
     category: "people",
-    title: "두 회사, 조직 통합에 총력",
+    title: "두 회사 조직 통합에 총력",
     summary:
       "KE Way, 공유 근무공간, 내부 설문 등 ‘한 회사’가 되기 전 문화 통합 프로그램과 직원 반응을 취재했다.",
     url: "https://view.asiae.co.kr/en/article/2026022708175807267",
@@ -156,7 +156,7 @@ const articles = [
     date: "2026.01.26",
     source: "아주경제",
     category: "crew",
-    title: "승무원들의 ‘불편한 동거’, 현장 공간은 과도기",
+    title: "승무원들의 ‘불편한 동거’ 현장 공간은 과도기",
     summary:
       "T2 통합 배치 뒤 객실승무원과 현장 직원이 겪은 대기·주차 공간 부족을 통해 물리적 통합의 현실을 짚는다.",
     url: "https://www.ajunews.com/view/20260126145430219",
@@ -183,7 +183,7 @@ const articles = [
     date: "2026.01.14",
     source: "연합뉴스",
     category: "customer",
-    title: "아시아나, 인천공항 T2 운항 시작",
+    title: "아시아나 인천공항 T2 운항 시작",
     summary:
       "OZ112편을 시작으로 터미널 2 공동 거점 시대가 열린 첫날 현장을 기록했다.",
     url: "https://www.yna.co.kr/amp/view/AKR20260114032501003",
@@ -192,7 +192,7 @@ const articles = [
     date: "2026.01.12",
     source: "대한TV",
     category: "crew",
-    title: "양사 객실승무원, 김장 나눔으로 만든 한 팀",
+    title: "양사 객실승무원 김장 나눔으로 만든 한 팀",
     summary:
       "대한항공과 아시아나 객실승무원들이 지역 취약계층을 위해 함께 김장을 담그며 교류한 공동 봉사 현장 영상이다.",
     url: "https://www.youtube.com/watch?v=m1BAs-9G22M",
@@ -228,7 +228,7 @@ const articles = [
     date: "2025.12.08",
     source: "뉴스핌",
     category: "network",
-    title: "통합 LCC, 2027년 1분기 출범 목표",
+    title: "통합 LCC 2027년 1분기 출범 목표",
     summary:
       "진에어를 중심으로 에어부산·에어서울을 합치는 일정과 남은 절차를 다룬다.",
     url: "https://www.newspim.com/news/view/20251208001048",
@@ -264,7 +264,7 @@ const articles = [
     date: "2025.08.26",
     source: "Associated Press",
     category: "network",
-    title: "대한항공, 보잉 항공기 103대 구매 계획",
+    title: "대한항공 보잉 항공기 103대 구매 계획",
     summary:
       "777-9·787-10·737-10·777-8F 등 장기 기단 교체와 통합 후 운영 역량에 영향을 줄 대형 주문을 전한다.",
     url: "https://apnews.com/article/72da477d948558534cbe0112969c3136",
@@ -282,7 +282,7 @@ const articles = [
     date: "2025.07.21",
     source: "서울경제",
     category: "crew",
-    title: "아시아나, 30년 넘은 객실승무원 기수제 폐지",
+    title: "아시아나 30년 넘은 객실승무원 기수제 폐지",
     summary:
       "통합을 앞두고 객실승무원 조직을 기수 중심에서 직급·역량 중심으로 바꾼 조치와 현장 영향을 분석한다.",
     url: "https://v.daum.net/v/20250721150526276",
@@ -300,7 +300,7 @@ const articles = [
     date: "2025.03.11",
     source: "Reuters",
     category: "brand",
-    title: "대한항공, 아시아나 통합 앞두고 새 브랜딩 공개",
+    title: "대한항공 아시아나 통합 앞두고 새 브랜딩 공개",
     summary:
       "41년 만의 로고·도장 변경과 통합 항공사의 글로벌 규모를 로이터가 보도했다.",
     url: "https://m.investing.com/news/stock-market-news/korean-air-launches-new-branding-after-13-billion-asiana-acquisition-3919700?ampMode=1",
@@ -309,7 +309,7 @@ const articles = [
     date: "2024.12.12",
     source: "Reuters",
     category: "milestone",
-    title: "지분 인수 완료…한국, 경쟁 보호책 예고",
+    title: "지분 인수 완료…한국 경쟁 보호책 예고",
     summary:
       "1.3 billion달러 규모 인수 완료와 통합 그룹의 국제 공급 규모, 한국 정부의 경쟁 촉진 대책을 다룬다.",
     url: "https://m.investing.com/news/stock-market-news/korean-air-completes-asiana-takeover-to-form-one-of-asias-biggest-airlines-3767848?ampMode=1",
@@ -336,7 +336,7 @@ const articles = [
     date: "2024.02.14",
     source: "European Commission",
     category: "regulation",
-    title: "EU, 조건부 기업결합 승인",
+    title: "EU 조건부 기업결합 승인",
     summary:
       "유럽 여객 4개 노선과 화물시장 경쟁 우려, 대한항공이 제시한 시정 조치를 설명한 공식 발표다.",
     url: "https://www.eeas.europa.eu/delegations/south-korea/commission-approves-acquisition-asiana-korean-air-subject-conditions_en",
@@ -345,7 +345,7 @@ const articles = [
     date: "2024.01.31",
     source: "Japan FTC",
     category: "regulation",
-    title: "일본 공정위, 조건부로 인수 승인",
+    title: "일본 공정위 조건부로 인수 승인",
     summary:
       "한일 여객·화물 노선의 경쟁 분석과 슬롯·운송 조치를 전제로 한 일본 경쟁당국의 공식 결정이다.",
     url: "https://www.jftc.go.jp/en/pressreleases/yearly-2024/January/240131_1.pdf",
@@ -491,3 +491,4 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
   );
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 }
+

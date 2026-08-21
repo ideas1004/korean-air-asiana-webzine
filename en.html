@@ -8,8 +8,8 @@
       name="description"
       content="An independent editorial webzine documenting the Korean Air–Asiana Airlines integration toward 17 December 2026."
     />
-    <title>Two Skies, One Journey | Korean Air × Asiana</title>
-    <link rel="stylesheet" href="assets/styles.css?v=20260821-6" />
+    <title>Two Skies One Journey | Korean Air × Asiana</title>
+    <link rel="stylesheet" href="assets/styles.css?v=20260822-1" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
       :root {
@@ -267,6 +267,7 @@
         <a href="#story">Story</a><a href="#timeline">Timeline</a
         ><a href="#impact">Customer impact</a
         ><a href="#purser-interview">Purser interview</a
+        ><a href="#future">Beyond integration</a
         ><a href="#newsroom">Archive</a>
       </nav>
       <button
@@ -281,6 +282,7 @@
         <a href="#story">Story</a><a href="#timeline">Timeline</a
         ><a href="#impact">Customer impact</a
         ><a href="#purser-interview">Purser interview</a
+        ><a href="#future">Beyond integration</a
         ><a href="#newsroom">Archive</a>
       </nav>
     </header>
@@ -298,7 +300,7 @@
         </div>
         <div class="hero-copy">
           <p class="eyebrow reveal">KOREAN AIR × ASIANA AIRLINES</p>
-          <h1 class="reveal">Two skies,<br /><em>one journey.</em></h1>
+          <h1 class="reveal">Two skies<br /><em>one journey.</em></h1>
           <div class="hero-deck reveal">
             <p>
               From the decision of November 2020 to 17 December 2026.<br />A
@@ -329,7 +331,7 @@
         <p>Planned launch <time datetime="2026-12-17">17 DEC 2026</time></p>
         <p>Issued <time datetime="2026-08-21">21 AUG 2026</time> · Julie</p>
       </aside>
-      <section class="opening section-pad" id="story">
+      <section class="opening dark-section section-pad" id="story">
         <div class="section-kicker reveal"><span>01</span> THE BIG PICTURE</div>
         <div class="opening-grid">
           <h2 class="display-title reveal">
@@ -449,12 +451,12 @@
           </ol>
         </div>
       </section>
-      <section class="mileage section-pad" id="impact">
+      <section class="mileage dark-section section-pad" id="impact">
         <div class="section-kicker reveal">
           <span>03</span> WHAT CHANGES FOR YOU
         </div>
         <div class="mileage-intro">
-          <h2 class="display-title reveal">My miles,<br /><em>where next?</em></h2>
+          <h2 class="display-title reveal">My miles<br /><em>where next?</em></h2>
           <p class="reveal">
             The published proposal keeps legacy Asiana mileage separate for a
             transition period before conversion to SKYPASS, subject to final
@@ -531,7 +533,7 @@
           >
         </p>
       </section>
-      <section class="purser-interview" id="purser-interview">
+      <section class="purser-interview dark-section" id="purser-interview">
         <div class="purser-kicker">
           <span>05</span>CABIN LEADERS · EDITORIAL DIALOGUE
         </div>
@@ -609,10 +611,130 @@
           the publicly described context of the integration.
         </p>
       </section>
+      <section
+        class="future-manifesto dark-section section-pad"
+        id="future"
+        aria-labelledby="future-title"
+      >
+        <div class="section-kicker light reveal">
+          <span>06</span> A CHARTER FOR THE NEXT SKY
+        </div>
+        <div class="manifesto-head">
+          <h2 id="future-title" class="display-title reveal">
+            What the new Korean Air<br /><em>must pursue.</em>
+          </h2>
+          <p class="reveal">
+            A great airline is not completed by the size of its fleet or the length
+            of its route map. Scale earns meaning only when it respects two distinct
+            memories while raising the standards of safety and service and reducing
+            the distance between nations and generations. The new Korean Air should
+            not aspire merely to be the world's largest airline. It should become
+            the airline that connects the world most deeply.
+          </p>
+        </div>
+        <div
+          class="orbit-stage reveal"
+          role="img"
+          aria-label="Aircraft and flight routes moving in both directions around Earth"
+        >
+          <svg class="orbit-scene" viewBox="0 0 1200 820" aria-hidden="true">
+            <defs>
+              <radialGradient id="earth-ocean-en" cx="35%" cy="28%" r="78%">
+                <stop offset="0" stop-color="#7be2f5" />
+                <stop offset="0.42" stop-color="#1f83b4" />
+                <stop offset="1" stop-color="#061b43" />
+              </radialGradient>
+              <linearGradient id="earth-land-en" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#b7f0d5" />
+                <stop offset="1" stop-color="#4eaa8c" />
+              </linearGradient>
+              <clipPath id="earth-clip-en"><circle cx="600" cy="410" r="186" /></clipPath>
+              <filter id="earth-glow-en" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="18" />
+              </filter>
+              <filter id="plane-glow-en" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
+            <circle class="earth-halo" cx="600" cy="410" r="225" />
+            <circle class="earth-glow" cx="600" cy="410" r="202" filter="url(#earth-glow-en)" />
+            <circle cx="600" cy="410" r="186" fill="url(#earth-ocean-en)" />
+            <g clip-path="url(#earth-clip-en)" class="earth-surface">
+              <path d="M486 266c42-27 82-20 113 5 12 10 14 27 1 36-18 13-42 6-58 25-13 15-8 35-28 47-23 14-67-1-80-28-12-25 18-64 52-85Z" fill="url(#earth-land-en)" />
+              <path d="M655 268c45-9 98 13 121 44 16 21 7 42-18 49-19 5-31 22-27 42 4 25-11 36-32 23-22-13-19-39-42-50-18-9-42-8-53-28-17-29 15-72 51-80Z" fill="url(#earth-land-en)" />
+              <path d="M541 449c25-9 58 5 68 29 9 22-6 43-8 66-2 25-19 59-40 56-24-3-22-39-36-55-13-15-37-21-38-43-2-24 27-45 54-53Z" fill="url(#earth-land-en)" />
+              <path d="M720 500c28-17 68-6 79 20 9 21-14 35-36 38-27 4-65-34-43-58Z" fill="url(#earth-land-en)" />
+              <ellipse class="earth-gridline" cx="600" cy="410" rx="186" ry="64" />
+              <ellipse class="earth-gridline" cx="600" cy="410" rx="186" ry="126" />
+              <ellipse class="earth-gridline" cx="600" cy="410" rx="72" ry="186" />
+              <ellipse class="earth-gridline" cx="600" cy="410" rx="132" ry="186" />
+            </g>
+            <circle class="earth-rim" cx="600" cy="410" r="186" />
+            <path class="flight-route route-a" d="M92 414 C286 92 902 82 1110 405" />
+            <path class="flight-route route-b" d="M110 530 C334 752 872 742 1094 492" />
+            <path class="flight-route route-c" d="M226 202 C416 500 790 536 1002 202" />
+            <path class="flight-route route-d" d="M208 648 C412 336 792 276 1012 624" />
+            <g class="moving-plane plane-a" filter="url(#plane-glow-en)"><path d="M-13-5 14 0-13 5-7 0Z" /><animateMotion dur="10s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;.5;1" path="M92 414 C286 92 902 82 1110 405" /></g>
+            <g class="moving-plane plane-b" filter="url(#plane-glow-en)"><path d="M-13-5 14 0-13 5-7 0Z" /><animateMotion dur="12s" begin="-4s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;.5;1" path="M110 530 C334 752 872 742 1094 492" /></g>
+            <g class="moving-plane plane-c" filter="url(#plane-glow-en)"><path d="M-13-5 14 0-13 5-7 0Z" /><animateMotion dur="8.5s" begin="-2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;.5;1" path="M226 202 C416 500 790 536 1002 202" /></g>
+            <g class="moving-plane plane-d" filter="url(#plane-glow-en)"><path d="M-13-5 14 0-13 5-7 0Z" /><animateMotion dur="11s" begin="-6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;0" keyTimes="0;.5;1" path="M208 648 C412 336 792 276 1012 624" /></g>
+            <g class="route-labels">
+              <text x="72" y="398">ICN</text><text x="1080" y="390">NYC</text>
+              <text x="92" y="558">SYD</text><text x="1080" y="526">LON</text>
+              <text x="198" y="188">PAR</text><text x="994" y="188">SIN</text>
+            </g>
+          </svg>
+          <div class="orbit-caption" aria-hidden="true">
+            <span>SAFETY</span><span>DIGNITY</span><span>CONNECTION</span><span>HOSPITALITY</span>
+          </div>
+        </div>
+        <div class="manifesto-grid">
+          <article class="reveal">
+            <span>01</span>
+            <h3>Safety is a language without compromise</h3>
+            <p>
+              The new standard must not be whichever procedure feels more familiar.
+              It must be whichever practice is safer. The first sentence of every
+              integration decision must be human life.
+            </p>
+          </article>
+          <article class="reveal">
+            <span>02</span>
+            <h3>Protect dignity before combining people</h3>
+            <p>
+              A workforce becomes one team when experience and ability matter more
+              than origin or hierarchy. Fair appointments and time to learn are not
+              costs. They are the infrastructure of trust.
+            </p>
+          </article>
+          <article class="reveal">
+            <span>03</span>
+            <h3>Turn scale into public value</h3>
+            <p>
+              A wider network should not become the power to reduce choice. It should
+              become a responsibility to connect more cities and reduce blind spots
+              in mobility.
+            </p>
+          </article>
+          <article class="reveal">
+            <span>04</span>
+            <h3>Korean sensibility as global welcome</h3>
+            <p>
+              The airline should be remembered for more than efficiency. Korean
+              attentiveness and warmth should become a consistent experience in
+              every sky and every city.
+            </p>
+          </article>
+        </div>
+        <blockquote class="manifesto-quote reveal">
+          “Not simply a larger airline<br />but a deeper connection.”
+        </blockquote>
+      </section>
       <section class="newsroom dark-section" id="newsroom">
         <div class="section-pad">
           <div class="section-kicker light reveal">
-            <span>06</span> ORIGINAL REPORTING, ONE CLICK AWAY
+            <span>07</span> ORIGINAL REPORTING ONE CLICK AWAY
           </div>
           <div class="newsroom-heading">
             <h2 class="display-title reveal">
@@ -674,7 +796,7 @@
         <p>HTML · CSS · JavaScript<br />GitHub · Vercel</p>
       </div>
     </footer>
-    <script src="assets/app.js?v=20260821-3"></script>
+    <script src="assets/app.js?v=20260822-1"></script>
     <script>
       const target = new Date("2026-12-17T00:00:00+09:00"),
         days = Math.max(0, Math.ceil((target - new Date()) / 86400000));
