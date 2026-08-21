@@ -2356,6 +2356,521 @@ html[lang="en"] main :is(h1, h2) em {
   }
 }
 
+/* Midnight edition — one continuous dark sky across every editorial chapter. */
+:root {
+  --night-text: #f2f7fb;
+  --night-muted: rgba(222, 235, 244, 0.68);
+  --night-soft: rgba(222, 235, 244, 0.48);
+  --night-line: rgba(156, 221, 245, 0.15);
+  --night-card: rgba(10, 27, 46, 0.74);
+}
+
+body {
+  color: var(--night-text);
+  background: #020711;
+}
+
+main > .dark-section {
+  color: var(--night-text);
+  border-top: 1px solid rgba(156, 221, 245, 0.08);
+}
+
+main > .dark-section + .dark-section {
+  border-top-color: rgba(156, 221, 245, 0.06);
+}
+
+.dark-section .section-kicker,
+.purser-interview .purser-kicker {
+  color: rgba(241, 248, 252, 0.84);
+  border: 0;
+  border-image: none;
+}
+
+.dark-section .section-kicker span,
+.purser-interview .purser-kicker span {
+  color: var(--sky);
+  border-color: rgba(156, 221, 245, 0.3);
+  background: rgba(156, 221, 245, 0.055);
+}
+
+.desktop-nav a::after,
+.hero .hero-copy h1 em::after,
+main .display-title em::after,
+.brand-grid .brand-sticky h2 em::after,
+.archive-grid .archive-copy h2 em::after,
+.purser-interview .purser-head h2 em::after,
+.brand-copy h3::after,
+.impact-card h3::after,
+.regulation-grid h3::after {
+  display: none;
+}
+
+.photo-credit a,
+.photo-credit a:hover,
+.photo-credit a:focus-visible,
+main a,
+main a:hover,
+main a:focus-visible {
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+.brand-copy h3,
+.impact-card h3,
+.regulation-grid h3 {
+  padding-bottom: 0;
+}
+
+.opening-copy,
+.mileage-intro > p,
+.brand-copy p,
+.archive-copy > p,
+.regulation-heading > p,
+.faq-list details p,
+.source-note,
+.purser-interview .purser-intro,
+.purser-interview .qa dd,
+.purser-interview .purser-note {
+  color: var(--night-muted);
+}
+
+.fact-ribbon,
+.fact-ribbon article,
+.brand-copy article,
+.ratio-board,
+.impact-grid,
+.impact-card,
+.archive-year i,
+.regulation-grid,
+.regulation-grid article,
+.faq-list,
+.faq-list details {
+  border-color: var(--night-line);
+}
+
+.fact-ribbon small,
+.fact-ribbon p,
+.ratio-board small,
+.ratio-board div span,
+.impact-card p,
+.archive-caption {
+  color: var(--night-soft) !important;
+}
+
+.superword {
+  color: rgba(156, 221, 245, 0.075);
+}
+
+.brand-copy article span,
+.impact-card > span,
+.archive-year,
+.ratio-board b,
+.ratio-board em {
+  color: var(--sky);
+}
+
+.ratio-board {
+  background: var(--night-line);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+}
+
+.ratio-board article,
+.impact-card,
+.regulation-grid article {
+  color: var(--night-text);
+  background:
+    radial-gradient(circle at 100% 0, rgba(127, 118, 211, 0.14), transparent 52%),
+    linear-gradient(145deg, rgba(12, 33, 55, 0.92), rgba(5, 17, 32, 0.88));
+}
+
+.action-note {
+  color: #071321;
+  background: linear-gradient(110deg, #8ed9ef, #9a98e4);
+  box-shadow: 0 22px 60px rgba(56, 122, 169, 0.2);
+}
+
+main .purser-interview.dark-section {
+  color: var(--night-text);
+  background:
+    radial-gradient(circle at 7% 4%, rgba(66, 171, 206, 0.2), transparent 28rem),
+    radial-gradient(circle at 94% 92%, rgba(127, 113, 207, 0.19), transparent 30rem),
+    linear-gradient(145deg, #071522 0%, #030914 62%, #060b19 100%) !important;
+}
+
+main .purser-interview.dark-section::before {
+  color: rgba(177, 220, 244, 0.045);
+}
+
+main .purser-interview.dark-section::after {
+  border-color: rgba(140, 210, 239, 0.11);
+  box-shadow: 0 0 100px rgba(109, 104, 200, 0.1);
+}
+
+main .purser-interview .purser-card,
+main .purser-interview .purser-card.asiana {
+  color: var(--night-text);
+  border-color: rgba(156, 221, 245, 0.13);
+  background:
+    radial-gradient(circle at 100% 0, rgba(122, 118, 210, 0.14), transparent 48%),
+    linear-gradient(145deg, rgba(13, 35, 58, 0.95), rgba(5, 17, 32, 0.94));
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.035);
+}
+
+main .purser-interview .qa {
+  border-top-color: rgba(156, 221, 245, 0.13);
+}
+
+main .purser-interview .qa dt {
+  color: #83d7f0 !important;
+}
+
+main .purser-interview .asiana .qa dt {
+  color: #d990aa !important;
+}
+
+main .purser-interview .qa dd {
+  color: rgba(232, 241, 247, 0.72);
+}
+
+main .purser-interview .purser-note {
+  border-color: rgba(156, 221, 245, 0.14);
+  background: rgba(9, 27, 46, 0.62);
+}
+
+.regulation-grid span {
+  color: #071321;
+  background: linear-gradient(135deg, #9cddf5, #9f99e5);
+}
+
+.regulation-grid p {
+  color: var(--night-muted);
+}
+
+.faq-list summary {
+  color: var(--night-text);
+}
+
+.faq-list summary i,
+.faq-list summary i::after {
+  background: var(--sky);
+}
+
+/* Future manifesto and animated orbital network. */
+.future-manifesto {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(30, 128, 170, 0.15), transparent 34rem),
+    radial-gradient(circle at 88% 12%, rgba(116, 100, 204, 0.18), transparent 28rem),
+    linear-gradient(145deg, #061522 0%, #020711 68%, #07091a 100%);
+}
+
+.manifesto-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  align-items: end;
+  gap: clamp(3rem, 8vw, 9rem);
+}
+
+.manifesto-head .display-title {
+  font-size: clamp(3.1rem, 5.2vw, 6rem);
+  line-height: 0.94;
+}
+
+.manifesto-head > p {
+  margin: 0;
+  color: var(--night-muted);
+  font-size: clamp(0.92rem, 1.2vw, 1.04rem);
+  line-height: 2;
+}
+
+.orbit-stage {
+  position: relative;
+  max-width: 1320px;
+  margin: clamp(5rem, 8vw, 8.5rem) auto;
+  overflow: hidden;
+  border-radius: 44px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(44, 149, 190, 0.12), transparent 31%),
+    radial-gradient(circle at 50% 50%, rgba(130, 118, 219, 0.07), transparent 54%),
+    rgba(1, 7, 18, 0.72);
+  box-shadow:
+    inset 0 0 0 1px rgba(156, 221, 245, 0.09),
+    0 50px 140px rgba(0, 0, 0, 0.36);
+}
+
+.orbit-stage::before,
+.orbit-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orbit-stage::before {
+  opacity: 0.46;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 0.7px, transparent 1px),
+    radial-gradient(circle, rgba(136, 213, 241, 0.8) 0 0.6px, transparent 0.9px);
+  background-position: 0 0, 37px 53px;
+  background-size: 113px 113px, 179px 179px;
+}
+
+.orbit-stage::after {
+  background: linear-gradient(90deg, rgba(1, 7, 18, 0.45), transparent 20% 80%, rgba(1, 7, 18, 0.45));
+}
+
+.orbit-scene {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.earth-halo {
+  fill: none;
+  stroke: rgba(143, 219, 245, 0.18);
+  stroke-width: 1;
+  stroke-dasharray: 5 11;
+  transform-origin: 600px 410px;
+  animation: globe-ring 32s linear infinite;
+}
+
+.earth-glow {
+  fill: rgba(86, 194, 226, 0.24);
+}
+
+.earth-surface {
+  filter: saturate(0.82);
+}
+
+.earth-gridline {
+  fill: none;
+  stroke: rgba(222, 247, 255, 0.2);
+  stroke-width: 1;
+}
+
+.earth-rim {
+  fill: none;
+  stroke: rgba(220, 248, 255, 0.52);
+  stroke-width: 1.6;
+  filter: drop-shadow(0 0 14px rgba(112, 214, 242, 0.46));
+}
+
+.flight-route {
+  fill: none;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-dasharray: 5 8;
+  animation: orbit-flow 12s linear infinite;
+}
+
+.route-a,
+.route-c {
+  stroke: rgba(129, 218, 246, 0.72);
+}
+
+.route-b,
+.route-d {
+  stroke: rgba(169, 148, 238, 0.64);
+}
+
+.route-b {
+  animation-direction: reverse;
+}
+
+.route-c {
+  stroke-dasharray: 2 10;
+  opacity: 0.72;
+}
+
+.route-d {
+  opacity: 0.66;
+  animation-duration: 17s;
+}
+
+.moving-plane path {
+  fill: #e5f9ff;
+  stroke: rgba(103, 202, 236, 0.76);
+  stroke-width: 0.7;
+}
+
+.plane-b path,
+.plane-d path {
+  fill: #d9d1ff;
+  stroke: rgba(164, 143, 235, 0.9);
+}
+
+.route-labels {
+  fill: rgba(213, 237, 248, 0.58);
+  font: 600 14px/1 var(--sans);
+  letter-spacing: 0.2em;
+}
+
+.orbit-caption {
+  position: absolute;
+  z-index: 2;
+  inset: 2.3rem 2.5rem auto;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(211, 237, 248, 0.46);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--night-line);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.24);
+}
+
+.manifesto-grid article {
+  min-height: 360px;
+  padding: clamp(2rem, 3vw, 3.2rem);
+  background:
+    radial-gradient(circle at 100% 0, rgba(126, 114, 211, 0.13), transparent 48%),
+    linear-gradient(145deg, rgba(12, 34, 57, 0.96), rgba(4, 16, 30, 0.94));
+}
+
+.manifesto-grid article > span {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: var(--sky);
+  border: 1px solid rgba(156, 221, 245, 0.25);
+  border-radius: 50%;
+  font: 500 0.7rem/1 var(--serif);
+}
+
+.manifesto-grid h3 {
+  margin: 3.2rem 0 1.4rem;
+  color: var(--night-text);
+  font-family: var(--editorial-serif, var(--serif));
+  font-size: clamp(1.48rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.manifesto-grid p {
+  margin: 0;
+  color: var(--night-muted);
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.manifesto-quote {
+  margin: clamp(6rem, 10vw, 11rem) auto 0;
+  max-width: 1080px;
+  color: var(--night-text);
+  text-align: center;
+  font-family: var(--editorial-serif, var(--serif));
+  font-size: clamp(3rem, 5.8vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+  text-shadow: 0 18px 60px rgba(83, 164, 219, 0.14);
+}
+
+@keyframes orbit-flow {
+  to {
+    stroke-dashoffset: -160;
+  }
+}
+
+@keyframes globe-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1050px) {
+  .manifesto-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .manifesto-grid article {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 720px) {
+  .manifesto-head {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .manifesto-head .display-title {
+    font-size: clamp(1.72rem, 7.1vw, 2.35rem);
+    line-height: 0.98;
+  }
+
+  html[lang="en"] .manifesto-head .display-title {
+    font-size: clamp(1.8rem, 7.35vw, 2.4rem);
+  }
+
+  html[lang="ja"] .manifesto-head .display-title {
+    font-size: clamp(1.66rem, 6.9vw, 2.25rem);
+  }
+
+  .manifesto-head > p {
+    font-size: 0.88rem;
+    line-height: 1.9;
+  }
+
+  .orbit-stage {
+    margin: 4rem -3vw;
+    border-radius: 24px;
+  }
+
+  .orbit-scene {
+    width: 148%;
+    max-width: none;
+    transform: translateX(-16.2%);
+  }
+
+  .orbit-caption {
+    inset: 1.2rem 1.4rem auto;
+    font-size: 0.48rem;
+  }
+
+  .orbit-caption span:nth-child(2),
+  .orbit-caption span:nth-child(3) {
+    display: none;
+  }
+
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .manifesto-grid article {
+    min-height: auto;
+    padding: 2.2rem;
+  }
+
+  .manifesto-grid h3 {
+    margin-top: 2.2rem;
+    font-size: 1.62rem;
+  }
+
+  .manifesto-quote {
+    margin-top: 6rem;
+    font-size: clamp(1.75rem, 7.3vw, 2.45rem);
+    line-height: 1.04;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2370,6 +2885,9 @@ html[lang="en"] main :is(h1, h2) em {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+  .moving-plane {
+    display: none;
   }
 }
 
