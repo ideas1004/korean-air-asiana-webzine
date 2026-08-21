@@ -1836,6 +1836,33 @@ main .display-title {
     linear-gradient(90deg, rgba(2, 7, 18, 0.92), rgba(5, 13, 29, 0.42) 62%, rgba(7, 14, 29, 0.14));
 }
 
+.people .feature-overlay {
+  background:
+    linear-gradient(0deg, rgba(2, 7, 17, 0.78) 0%, rgba(3, 9, 21, 0.34) 58%, rgba(4, 10, 22, 0.08) 100%),
+    linear-gradient(90deg, rgba(2, 7, 18, 0.94) 0%, rgba(4, 12, 27, 0.55) 54%, rgba(7, 14, 29, 0.16) 100%);
+}
+
+.passenger .passenger-shade {
+  background:
+    radial-gradient(ellipse at 82% 18%, rgba(121, 109, 210, 0.16), transparent 34%),
+    linear-gradient(90deg, rgba(2, 7, 18, 0.2) 0%, rgba(3, 9, 20, 0.34) 48%, rgba(2, 7, 18, 0.9) 100%);
+}
+
+.feature-copy blockquote,
+.passenger-quote blockquote {
+  text-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.92),
+    0 8px 34px rgba(0, 0, 0, 0.72);
+}
+
+.feature-copy > p:not(.section-kicker),
+.passenger-quote p {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.9),
+    0 5px 18px rgba(0, 0, 0, 0.7);
+}
+
 .purser-interview {
   isolation: isolate;
   background:
@@ -2011,6 +2038,16 @@ main .display-title {
 
   .purser-interview .purser-grid {
     gap: 1rem;
+  }
+
+  .people .feature-overlay {
+    background: linear-gradient(0deg, rgba(2, 7, 17, 0.97) 0%, rgba(3, 9, 21, 0.82) 58%, rgba(4, 10, 22, 0.12) 100%);
+  }
+
+  .passenger .passenger-shade {
+    background:
+      linear-gradient(0deg, rgba(2, 7, 17, 0.97) 0%, rgba(3, 9, 21, 0.76) 64%, rgba(4, 10, 22, 0.12) 100%),
+      linear-gradient(90deg, rgba(2, 7, 18, 0.72), rgba(2, 7, 18, 0.24));
   }
 
   .closing p {
