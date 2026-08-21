@@ -1,0 +1,243 @@
+name: Editorial revamp
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/editorial-revamp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  revamp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply editorial revamp
+        shell: python
+        run: |
+          from pathlib import Path
+
+          js_path = Path('assets/app.js')
+          css_path = Path('assets/styles.css')
+
+          js = js_path.read_text(encoding='utf-8')
+          css = css_path.read_text(encoding='utf-8')
+
+          marker = '/* EDITORIAL_REVAMP_20260821 */'
+          js_marker = '// EDITORIAL_REVAMP_20260821'
+
+          if marker not in css:
+              css += r'''
+
+/* EDITORIAL_REVAMP_20260821 */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap');
+
+html { font-kerning: normal; text-rendering: optimizeLegibility; }
+html[lang="ko"] { --editorial-serif: "Noto Serif KR", Georgia, serif; }
+html[lang="en"] { --editorial-serif: "Cormorant Garamond", Georgia, serif; }
+html[lang="ja"] { --editorial-serif: "Noto Serif JP", "Yu Mincho", serif; }
+
+.hero h1, .display-title, .feature-copy blockquote, .passenger-quote blockquote,
+.archive-copy h2, .brand-sticky h2, .brand-copy h3, .timeline time,
+.purser-interview h2, .purser-quote, .purser-card h3 {
+  font-family: var(--editorial-serif, var(--serif));
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-wrap: balance;
+}
+.hero h1 { font-weight: 500; letter-spacing: -.062em; line-height: .9; }
+.display-title { font-weight: 500; letter-spacing: -.052em; line-height: .98; }
+.opening-copy, .brand-copy p, .network-columns p, .impact-card p, .archive-copy p,
+.regulation-grid p, .faq-list p { line-height: 1.98; letter-spacing: -.01em; }
+
+.global-lang-switch {
+  position: fixed; z-index: 180; right: 3.2vw; top: 88px;
+  display: flex; align-items: center; gap: .18rem; padding: .3rem;
+  color: #fff; background: rgba(8,20,33,.58); border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 36px rgba(0,0,0,.14);
+}
+.global-lang-switch a { padding: .58rem .72rem; border-radius: 999px; font-size: .61rem; font-weight: 800; letter-spacing: .13em; opacity: .56; transition: .2s ease; }
+.global-lang-switch a:hover { opacity: 1; }
+.global-lang-switch a.active { color: var(--ink); background: #fff; opacity: 1; }
+
+.editorial-dday {
+  position: absolute; z-index: 5; right: 3.2vw; bottom: 8.5vh; min-width: 250px;
+  padding: 1.4rem 1.5rem 1.35rem; text-align: right; color: #fff;
+  border-top: 1px solid rgba(255,255,255,.7); border-bottom: 1px solid rgba(255,255,255,.28);
+  background: linear-gradient(90deg, transparent, rgba(3,14,26,.2));
+}
+.editorial-dday small { display:block; font-size:.58rem; font-weight:700; letter-spacing:.17em; opacity:.68; }
+.editorial-dday strong { display:block; margin:.4rem 0 .25rem; font:500 clamp(2.8rem,5vw,5.6rem)/.86 var(--editorial-serif, var(--serif)); letter-spacing:-.055em; }
+.editorial-dday span { display:block; font-size:.61rem; letter-spacing:.13em; opacity:.7; }
+.hero-deck { padding-right: min(30vw, 380px); }
+
+.photo-credit {
+  position:absolute; z-index:5; right:1rem; bottom:1rem; max-width:min(78vw,760px); margin:0;
+  font-size:.49rem; line-height:1.5; letter-spacing:.08em; color:rgba(255,255,255,.64); text-align:right;
+  text-shadow: 0 1px 8px rgba(0,0,0,.45);
+}
+
+.purser-interview { padding: clamp(7rem, 11vw, 11rem) 6vw; background: #e8e4da; color: var(--ink); overflow:hidden; }
+.purser-interview .interview-kicker { display:flex; align-items:center; gap:1rem; padding-bottom:1rem; border-bottom:1px solid rgba(10,24,39,.2); font-size:.66rem; font-weight:800; letter-spacing:.15em; }
+.purser-interview .interview-kicker span { color: var(--sky-deep); }
+.purser-interview .interview-head { display:grid; grid-template-columns:1.2fr .8fr; gap:8vw; align-items:end; margin:4rem 0 5.5rem; }
+.purser-interview h2 { margin:0; max-width:900px; font-size:clamp(3.5rem,7.2vw,7.8rem); line-height:.92; font-weight:500; letter-spacing:-.06em; }
+.purser-interview h2 em { color: var(--sky-deep); font-weight:500; }
+.purser-interview .interview-intro { margin:0; max-width:560px; color:#48545c; font-size:.93rem; line-height:1.95; }
+.purser-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(10,24,39,.18); border:1px solid rgba(10,24,39,.18); }
+.purser-card { min-height:520px; padding:clamp(2rem,4vw,4rem); background:var(--paper); }
+.purser-card.asiana { background:#f7f4ee; }
+.purser-card .airline { display:flex; justify-content:space-between; gap:1rem; padding-bottom:1.2rem; margin-bottom:3rem; border-bottom:1px solid rgba(10,24,39,.16); font-size:.61rem; font-weight:800; letter-spacing:.15em; }
+.purser-card .airline b { width:10px; height:10px; border-radius:50%; background:var(--sky-deep); }
+.purser-card.asiana .airline b { background:#8d2741; }
+.purser-card h3 { margin:0 0 2.6rem; font-size:clamp(2rem,3.4vw,3.7rem); line-height:1; font-weight:500; letter-spacing:-.045em; }
+.purser-qa { margin:0 0 2.5rem; }
+.purser-qa dt { margin-bottom:.75rem; font-size:.63rem; font-weight:800; letter-spacing:.1em; color:var(--sky-deep); }
+.purser-card.asiana .purser-qa dt { color:#8d2741; }
+.purser-qa dd { margin:0; color:#34414c; font-size:.96rem; line-height:1.95; }
+.purser-quote { margin:5rem auto 0; max-width:1050px; text-align:center; font-size:clamp(2.1rem,4.5vw,5rem); line-height:1.06; letter-spacing:-.045em; }
+.purser-note { margin:2rem auto 0; max-width:800px; text-align:center; color:#687078; font-size:.67rem; line-height:1.7; }
+
+@media (max-width: 900px) {
+  .global-lang-switch { right:4vw; top:76px; }
+  .editorial-dday { left:4vw; right:auto; bottom:2.1rem; text-align:left; min-width:220px; }
+  .hero-deck { padding-right:0; padding-bottom:9.5rem; }
+  .purser-interview .interview-head { grid-template-columns:1fr; gap:2rem; }
+  .purser-grid { grid-template-columns:1fr; }
+  .purser-card { min-height:0; }
+}
+'''
+
+          if js_marker not in js:
+              js += r'''
+
+// EDITORIAL_REVAMP_20260821
+(() => {
+  const LANG = (document.documentElement.lang || 'ko').toLowerCase().slice(0,2);
+  const common = 'https://commons.wikimedia.org/wiki/Special:Redirect/file/';
+  const photos = {
+    hero: common + 'Korean%20Air%20and%20Asiana%20Airlines%20Airbus%20A380%20at%20Incheon%20Airport.jpg',
+    korean: common + 'Korean%20Air%20Airbus%20A380-861%3BHL7627%40ICN.JPG',
+    asiana: common + 'AsianaA380-HL7625-OZ202-SeoulIncheon-ICN.jpg'
+  };
+
+  const copy = {
+    ko: {
+      days: n => n === 0 ? '오늘, 하나의 항공사' : `통합까지 ${n}일`,
+      interviewKicker:'CABIN LEADERS · EDITORIAL DIALOGUE',
+      interviewTitle:'두 유니폼,<br><em>하나의 브리핑.</em>',
+      intro:'통합의 성패는 로고보다 먼저 현장에서 드러난다. 서로 다른 두 서비스 문화가 하나의 기준을 만들어가는 과정을, 양사 사무장의 시선으로 재구성한 에디토리얼 가상 대담이다.',
+      ke:'KOREAN AIR PURSER', oz:'ASIANA PURSER',
+      q1:'Q1 · 통합을 앞두고 가장 중요하다고 보는 것은?',
+      ke1:'절차를 같게 만드는 것만으로는 부족합니다. 왜 그 절차를 지키는지 서로의 맥락을 이해해야 현장에서 같은 판단을 할 수 있습니다. 안전과 서비스의 언어가 하나가 되는 데에는 결국 함께 일해 본 시간이 필요합니다.',
+      oz1:'아시아나가 오래 지켜온 섬세한 서비스 감각이 사라지는 것이 아니라, 새로운 표준 안에서 더 좋은 방식으로 남았으면 합니다. 통합은 한쪽이 다른 쪽을 지우는 일이 아니라 좋은 것을 골라 다음 기준을 만드는 과정이어야 합니다.',
+      q2:'Q2 · 현장에서 가장 먼저 달라지는 것은 무엇일까요?',
+      ke2:'브리핑 방식, 보고 체계, 장비 위치처럼 아주 구체적인 것부터 달라집니다. 작은 차이가 비정상 상황에서는 큰 차이가 될 수 있기 때문에 반복 훈련과 공통 언어가 중요합니다.',
+      oz2:'직원에게는 제도보다 관계가 먼저 체감됩니다. 같은 준비실을 쓰고, 함께 훈련하고, 서로의 비행을 경험하면서 이름보다 얼굴이 먼저 익숙해질 때 통합이 현실이 됩니다.',
+      quote:'“한 회사가 되는 날보다,<br>한 팀이 되는 시간이 더 중요하다.”',
+      note:'※ 실제 특정 사무장의 발언을 인용한 인터뷰가 아니라, 공개된 통합 과정과 객실 현장의 일반적 맥락을 바탕으로 구성한 에디토리얼 가상 대담입니다.'
+    },
+    en: {
+      days: n => n === 0 ? 'ONE AIRLINE · TODAY' : `${n} DAYS TO ONE AIRLINE`,
+      interviewKicker:'CABIN LEADERS · EDITORIAL DIALOGUE',
+      interviewTitle:'Two uniforms.<br><em>One briefing.</em>',
+      intro:'Integration reveals itself on the frontline before it appears in a logo. This editorial dialogue imagines the perspectives of two pursers as distinct service cultures move toward one operating standard.',
+      ke:'KOREAN AIR PURSER', oz:'ASIANA PURSER',
+      q1:'Q1 · What matters most before integration?',
+      ke1:'Making procedures identical is not enough. Crews need to understand why a procedure exists and the context behind it. Shared judgment in the cabin comes from a common safety language—and from time actually spent working together.',
+      oz1:'I hope Asiana’s long-established attention to detail is not simply erased, but carried forward where it strengthens the new standard. Integration should be about selecting the best of both cultures and building the next one together.',
+      q2:'Q2 · What changes first on the frontline?',
+      ke2:'Very concrete things: briefing formats, reporting lines, equipment locations. Small differences can become large ones in an abnormal situation, which is why repeated joint training and shared terminology matter.',
+      oz2:'For employees, relationships often become real before systems do. Sharing preparation spaces, training together and experiencing each other’s operations turns unfamiliar company names into familiar colleagues.',
+      quote:'“The date we become one company matters less<br>than the time it takes to become one team.”',
+      note:'※ This is an editorially reconstructed, fictional dialogue—not quotations from specific real pursers. It is based on publicly reported integration activity and general cabin-operations context.'
+    },
+    ja: {
+      days: n => n === 0 ? '今日、ひとつの航空会社へ' : `統合まであと${n}日`,
+      interviewKicker:'CABIN LEADERS · EDITORIAL DIALOGUE',
+      interviewTitle:'二つの制服、<br><em>ひとつのブリーフィング。</em>',
+      intro:'統合の成否は、ロゴより先に現場に表れる。異なる二つのサービス文化が一つの基準へ向かう過程を、両社のパーサーの視点から再構成したエディトリアル形式の架空対談。',
+      ke:'KOREAN AIR PURSER', oz:'ASIANA PURSER',
+      q1:'Q1 · 統合を前に、最も重要だと思うことは？',
+      ke1:'手順を同じにするだけでは十分ではありません。なぜその手順が必要なのか、背景まで理解してこそ現場で同じ判断ができます。安全とサービスの言葉を一つにするには、実際に一緒に働く時間が必要です。',
+      oz1:'アシアナが長く大切にしてきた細やかなサービス感覚が消えるのではなく、新しい基準の中でより良い形で残ってほしいと思います。統合は片方を消すことではなく、双方の良さから次の基準をつくることです。',
+      q2:'Q2 · 現場で最初に変わるのは？',
+      ke2:'ブリーフィング方法、報告体系、装備の位置など、とても具体的な部分です。小さな違いが異常時には大きな差になり得るため、反復訓練と共通言語が重要になります。',
+      oz2:'社員にとっては制度より先に人間関係が変化として感じられます。同じ準備室を使い、一緒に訓練し、互いの運航を経験して、社名より顔が先に身近になった時、統合が現実になります。',
+      quote:'「一つの会社になる日より、<br>一つのチームになる時間が大切だ。」',
+      note:'※ 特定の実在するパーサーの発言を引用したものではなく、公開されている統合プロセスと客室業務の一般的な文脈をもとに構成したエディトリアル形式の架空対談です。'
+    }
+  };
+  const t = copy[LANG] || copy.ko;
+
+  function setImages(){
+    const hero = document.querySelector('.hero-image');
+    if(hero){ hero.src = photos.hero; hero.alt = LANG==='ja' ? '仁川国際空港で撮影された大韓航空とアシアナ航空のエアバスA380' : LANG==='en' ? 'Korean Air and Asiana Airlines Airbus A380 aircraft at Incheon International Airport' : '인천국제공항의 대한항공과 아시아나항공 에어버스 A380'; }
+    const people = document.querySelector('.people img');
+    if(people){ people.src = photos.korean; people.alt = LANG==='ja' ? '仁川国際空港の大韓航空エアバスA380' : LANG==='en' ? 'Korean Air Airbus A380 at Incheon International Airport' : '인천국제공항의 대한항공 에어버스 A380'; }
+    const passenger = document.querySelector('.passenger img');
+    if(passenger){ passenger.src = photos.asiana; passenger.alt = LANG==='ja' ? '仁川国際空港のアシアナ航空エアバスA380' : LANG==='en' ? 'Asiana Airlines Airbus A380 at Incheon International Airport' : '인천국제공항의 아시아나항공 에어버스 A380'; }
+
+    document.querySelectorAll('.visual-note').forEach(el => el.remove());
+    const heroSec = document.querySelector('.hero');
+    if(heroSec && !heroSec.querySelector('.photo-credit')) heroSec.insertAdjacentHTML('beforeend','<p class="photo-credit">PHOTO · Hyeonwoo Noh / Wikimedia Commons · CC BY-SA 4.0</p>');
+    const peopleSec = document.querySelector('.people');
+    if(peopleSec && !peopleSec.querySelector('.photo-credit')) peopleSec.insertAdjacentHTML('beforeend','<p class="photo-credit">PHOTO · Wikimedia Commons · CC licensed</p>');
+    const passengerSec = document.querySelector('.passenger');
+    if(passengerSec && !passengerSec.querySelector('.photo-credit')) passengerSec.insertAdjacentHTML('beforeend','<p class="photo-credit">PHOTO · JCSigma2000 / Wikimedia Commons · CC licensed</p>');
+  }
+
+  function languageSwitch(){
+    document.querySelectorAll('.lang-switch').forEach(el => el.remove());
+    if(document.querySelector('.global-lang-switch')) return;
+    const links = [['ko','KR','/'],['en','EN','/en.html'],['ja','JP','/ja.html']];
+    const nav = document.createElement('nav'); nav.className='global-lang-switch'; nav.setAttribute('aria-label','Language');
+    nav.innerHTML = links.map(([l,label,href]) => `<a href="${href}" class="${LANG===l?'active':''}">${label}</a>`).join('');
+    document.body.appendChild(nav);
+  }
+
+  function dday(){
+    document.querySelectorAll('.countdown-panel').forEach(el => el.remove());
+    if(document.querySelector('.editorial-dday')) return;
+    const hero = document.querySelector('.hero'); if(!hero) return;
+    const target = new Date('2026-12-17T00:00:00+09:00');
+    const now = new Date(); const days = Math.max(0, Math.ceil((target-now)/86400000));
+    const box = document.createElement('div'); box.className='editorial-dday reveal visible';
+    box.innerHTML = `<small>INTEGRATION DAY · 17 DEC 2026</small><strong>${days===0?'D-DAY':'D−'+days}</strong><span>${t.days(days)}</span>`;
+    hero.appendChild(box);
+  }
+
+  function dates(){
+    document.querySelectorAll('.hero-topline span').forEach(el => { if(/AUG 2026/i.test(el.textContent)) el.textContent='21 AUG 2026'; });
+    document.querySelectorAll('time[datetime="2026-08-19"]').forEach(el => { el.setAttribute('datetime','2026-08-21'); el.textContent = LANG==='en'?'21 AUG 2026':LANG==='ja'?'2026.08.21':'2026.08.21'; });
+  }
+
+  function interview(){
+    if(document.querySelector('.purser-interview')) return;
+    const anchor = document.querySelector('#regulation, .regulation, #newsroom'); if(!anchor) return;
+    const sec = document.createElement('section'); sec.className='purser-interview'; sec.id='purser-interview';
+    sec.innerHTML = `<div class="interview-kicker"><span>08</span>${t.interviewKicker}</div>
+      <div class="interview-head"><h2>${t.interviewTitle}</h2><p class="interview-intro">${t.intro}</p></div>
+      <div class="purser-grid">
+        <article class="purser-card korean"><div class="airline"><span>${t.ke}</span><b></b></div><h3>Korean Air</h3><dl class="purser-qa"><dt>${t.q1}</dt><dd>${t.ke1}</dd></dl><dl class="purser-qa"><dt>${t.q2}</dt><dd>${t.ke2}</dd></dl></article>
+        <article class="purser-card asiana"><div class="airline"><span>${t.oz}</span><b></b></div><h3>Asiana Airlines</h3><dl class="purser-qa"><dt>${t.q1}</dt><dd>${t.oz1}</dd></dl><dl class="purser-qa"><dt>${t.q2}</dt><dd>${t.oz2}</dd></dl></article>
+      </div><blockquote class="purser-quote">${t.quote}</blockquote><p class="purser-note">${t.note}</p>`;
+    anchor.parentNode.insertBefore(sec, anchor);
+  }
+
+  function run(){ setImages(); languageSwitch(); dday(); dates(); interview(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',run); else run();
+})();
+'''
+
+          css_path.write_text(css, encoding='utf-8')
+          js_path.write_text(js, encoding='utf-8')
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/app.js assets/styles.css
+          git commit -m "Restore aircraft imagery, typography and purser interview"
+          git push
