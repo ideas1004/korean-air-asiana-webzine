@@ -2056,6 +2056,306 @@ main .display-title {
   }
 }
 
+/* Editorial title system — one typographic voice at every scale. */
+:root {
+  --title-ink: #061423;
+  --title-rule: linear-gradient(90deg, #62c9ea, #8d87df 70%, transparent);
+  --title-glow: rgba(109, 200, 234, 0.28);
+}
+
+main :is(h1, h2, h3),
+.faq-list summary,
+.timeline strong {
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures contextual;
+  text-rendering: optimizeLegibility;
+  hanging-punctuation: first last;
+}
+
+.hero .hero-copy h1,
+main .display-title,
+.brand-grid .brand-sticky h2,
+.archive-grid .archive-copy h2,
+.purser-interview .purser-head h2,
+.closing p {
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.054em;
+}
+
+.hero .hero-copy h1 {
+  line-height: 0.9;
+}
+
+.purser-interview .purser-head h2,
+.archive-grid .archive-copy h2,
+.brand-grid .brand-sticky h2 {
+  line-height: 0.96;
+}
+
+.hero .hero-copy h1 em,
+main .display-title em,
+.brand-grid .brand-sticky h2 em,
+.archive-grid .archive-copy h2 em,
+.purser-interview .purser-head h2 em {
+  position: relative;
+  display: inline-block;
+  padding-right: 0.035em;
+  font-weight: 400;
+}
+
+.hero .hero-copy h1 em::after,
+main .display-title em::after,
+.brand-grid .brand-sticky h2 em::after,
+.archive-grid .archive-copy h2 em::after,
+.purser-interview .purser-head h2 em::after {
+  content: "";
+  position: absolute;
+  left: 0.045em;
+  right: -0.08em;
+  bottom: -0.085em;
+  height: 1px;
+  background: var(--title-rule);
+  box-shadow: 0 0 16px var(--title-glow);
+  opacity: 0.72;
+  transform-origin: left center;
+}
+
+html[lang="ko"] .hero .hero-copy h1,
+html[lang="ko"] main .display-title,
+html[lang="ko"] .brand-grid .brand-sticky h2,
+html[lang="ko"] .archive-grid .archive-copy h2,
+html[lang="ko"] .purser-interview .purser-head h2 {
+  letter-spacing: -0.058em;
+}
+
+html[lang="en"] .hero .hero-copy h1,
+html[lang="en"] main .display-title,
+html[lang="en"] .purser-interview .purser-head h2 {
+  letter-spacing: -0.045em;
+}
+
+html[lang="ja"] .hero .hero-copy h1,
+html[lang="ja"] main .display-title,
+html[lang="ja"] .purser-interview .purser-head h2 {
+  letter-spacing: -0.036em;
+}
+
+html[lang="ko"] main :is(h1, h2) em,
+html[lang="ja"] main :is(h1, h2) em {
+  font-style: normal;
+}
+
+html[lang="en"] main :is(h1, h2) em {
+  font-style: italic;
+}
+
+.section-kicker,
+.purser-kicker {
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 1.15rem;
+  font-size: 0.62rem;
+  line-height: 1.45;
+  letter-spacing: 0.19em;
+}
+
+.section-kicker span,
+.purser-kicker span {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: var(--sky-deep);
+  border: 1px solid rgba(62, 135, 176, 0.34);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.38);
+  box-shadow:
+    0 0 0 5px rgba(99, 191, 226, 0.045),
+    0 0 22px rgba(99, 191, 226, 0.12);
+  font: 600 0.68rem/1 var(--serif);
+  letter-spacing: 0;
+}
+
+.section-kicker.light span,
+.dark-section .section-kicker span {
+  color: var(--sky);
+  border-color: rgba(156, 221, 245, 0.34);
+  background: rgba(156, 221, 245, 0.055);
+}
+
+.brand-copy h3,
+.impact-card h3,
+.regulation-grid h3,
+.network-columns h3,
+.article-card h3,
+.purser-interview .purser-card h3 {
+  font-family: var(--editorial-serif, var(--serif));
+  font-weight: 500;
+  letter-spacing: -0.038em;
+  text-wrap: balance;
+}
+
+.brand-copy h3,
+.impact-card h3,
+.regulation-grid h3 {
+  position: relative;
+  padding-bottom: 0.9rem;
+  line-height: 1.16;
+}
+
+.brand-copy h3::after,
+.impact-card h3::after,
+.regulation-grid h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 42px;
+  height: 1px;
+  background: var(--title-rule);
+  box-shadow: 0 0 12px rgba(99, 191, 226, 0.14);
+}
+
+.brand-copy h3 {
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+}
+
+.impact-card h3,
+.regulation-grid h3 {
+  font-size: clamp(1.35rem, 1.7vw, 1.62rem);
+}
+
+.network-columns h3 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 2.45vw, 2.35rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  text-shadow: 0 0 24px rgba(156, 221, 245, 0.16);
+}
+
+.purser-interview .purser-card h3 {
+  padding-bottom: 0.35rem;
+  font-weight: 500;
+  letter-spacing: -0.048em;
+}
+
+.article-card h3 {
+  display: -webkit-box;
+  max-width: 100%;
+  min-height: 2.5em;
+  overflow: hidden;
+  font-size: clamp(1.48rem, 1.8vw, 1.78rem);
+  line-height: 1.25;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.timeline strong {
+  font-family: var(--editorial-serif, var(--serif));
+  font-size: clamp(1.18rem, 1.6vw, 1.38rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+
+.feature-copy blockquote,
+.passenger-quote blockquote,
+.purser-quote {
+  font-family: var(--editorial-serif, var(--serif));
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.048em;
+  text-wrap: balance;
+}
+
+.passenger-quote {
+  width: min(660px, 46vw);
+}
+
+.passenger-quote blockquote {
+  font-size: clamp(2.8rem, 3.8vw, 4.3rem);
+}
+
+.faq-list summary {
+  font-family: var(--editorial-serif, var(--serif));
+  font-size: clamp(1.04rem, 1.35vw, 1.22rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.026em;
+}
+
+.closing p {
+  line-height: 0.88;
+}
+
+@media (max-width: 720px) {
+  .hero .hero-copy h1,
+  main .display-title,
+  .brand-grid .brand-sticky h2,
+  .archive-grid .archive-copy h2,
+  .purser-interview .purser-head h2 {
+    line-height: 0.97;
+  }
+
+  .section-kicker,
+  .purser-kicker {
+    gap: 0.7rem;
+    font-size: 0.57rem;
+    letter-spacing: 0.16em;
+  }
+
+  .section-kicker span,
+  .purser-kicker span {
+    width: 27px;
+    height: 27px;
+    font-size: 0.62rem;
+  }
+
+  .brand-copy h3 {
+    font-size: 1.72rem;
+  }
+
+  .article-card h3 {
+    max-width: 100%;
+    min-height: 2.56em;
+    font-size: 1.48rem;
+    line-height: 1.28;
+  }
+
+  .feature-copy blockquote,
+  .passenger-quote blockquote,
+  .purser-quote {
+    line-height: 1.11;
+  }
+
+  .passenger-quote blockquote {
+    font-size: clamp(2rem, 8.8vw, 2.35rem);
+  }
+
+  .passenger-quote {
+    left: 5vw;
+    right: 5vw;
+    width: auto;
+  }
+
+  main .purser-interview .purser-quote {
+    font-size: clamp(1.35rem, 5.8vw, 1.65rem);
+  }
+
+  .hero .hero-copy h1 em::after,
+  main .display-title em::after,
+  .brand-grid .brand-sticky h2 em::after,
+  .archive-grid .archive-copy h2 em::after,
+  .purser-interview .purser-head h2 em::after {
+    bottom: -0.055em;
+    opacity: 0.58;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
